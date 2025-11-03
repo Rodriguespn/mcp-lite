@@ -122,7 +122,7 @@ function verifyPropsInjection(
   }
 
   try {
-    const injectedProps = JSON.parse(match[1].replace(/\s/g, ""));
+    const injectedProps = JSON.parse(match[1]?.replace(/\s/g, "") ?? "{}");
     const expected = JSON.stringify(expectedProps);
     const actual = JSON.stringify(injectedProps);
 
